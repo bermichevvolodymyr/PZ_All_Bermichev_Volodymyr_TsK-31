@@ -297,5 +297,5 @@ System.out.println(sum &gt; 1);
 ```
 [![image.png](https://i.postimg.cc/sxvqwNG6/image.png)](https://postimg.cc/30Qtw9Bm)
 Результат false, у циклі виконується цілочисельне ділення 1/i, яке для всіх i>1 дає 0, тому sum залишається 1.0
-
 (лише 1/1 = 1), що не більше за 1.
+
