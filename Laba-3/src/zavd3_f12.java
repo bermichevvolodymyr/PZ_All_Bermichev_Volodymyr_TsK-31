@@ -26,7 +26,6 @@ public class zavd3_f12 {
             sum += term;
             i++;
 
-            // Safety check to prevent infinite loops (though this series converges well)
             if (i > 1000000) {
                 throw new IllegalArgumentException("Розрахунок перевищив максимальну кількість ітерацій");
             }
@@ -46,3 +45,4 @@ public class zavd3_f12 {
         }
     }
 }
+
