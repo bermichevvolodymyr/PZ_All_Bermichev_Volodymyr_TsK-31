@@ -23,7 +23,7 @@ https://en.wikipedia.org/wiki/Insertion_sort
 #### Виконання: Код
 ```Java
 public class Zavd2 {
-    public static void selectionSort(short[] arr) {
+    public void selectionSort(short[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             int maxIdx = i;
@@ -38,7 +38,7 @@ public class Zavd2 {
         }
     }
 
-    public static void insertionSort(short[] arr) {
+    public void insertionSort(short[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
             short key = arr[i];
@@ -51,7 +51,7 @@ public class Zavd2 {
         }
     }
 
-    public static void printArray(short[] arr) {
+    public void printArray(short[] arr) {
         for (short num : arr) {
             System.out.print(num + " ");
         }
@@ -59,19 +59,20 @@ public class Zavd2 {
     }
 
     public static void main(String[] args) {
+        Zavd2 obj=new Zavd2();
         short[] arr1 = {64, 34, 25, 12, 22, 11, 90};
         short[] arr2 = {64, 34, 25, 12, 22, 11, 90};
 
         System.out.println("Вихідний масив:");
-        printArray(arr1);
+        obj.printArray(arr1);
 
-        selectionSort(arr1);
+        obj.selectionSort(arr1);
         System.out.println("Selection Sort (за спаданням):");
-        printArray(arr1);
+        obj. printArray(arr1);
 
-        insertionSort(arr2);
+        obj.insertionSort(arr2);
         System.out.println("Insertion Sort (за спаданням):");
-        printArray(arr2);
+        obj.printArray(arr2);
     }
 }
 ```
@@ -105,4 +106,5 @@ Sort завжди виконує O(n^2) порівнянь незалежно в
 ## 4. Що означають позначення O(1), O(n), O(n^2)?
 - O(1) - постійний час (не залежить від розміру)
 - O(n) - лінійний час (пропорційний розміру)
+
 - O(n^2) - квадратичний час (зростає як квадрат розміру)
