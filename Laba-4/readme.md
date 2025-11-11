@@ -30,8 +30,10 @@
 #### Виконання: Код
 ### 1.
 ```Java
+import java.util.Arrays;
+
 public class Zavd2 {
-    public static int sumElementsGreaterThan3(int[] array) {
+    public int sumElementsGreaterThan3(int[] array) {
         if (array == null) {
             throw new NullPointerException("Масив не може бути null");
         }
@@ -49,37 +51,17 @@ public class Zavd2 {
     }
 
     public static void main(String[] args) {
+        Zavd2 obj=new Zavd2();
         int[] test1 = {1, 2, 4, 5, 3, 6, 7, 0};
-        System.out.println("Тест 1: " + java.util.Arrays.toString(test1));
-        System.out.println("Сума елементів > 3: " + sumElementsGreaterThan3(test1));
-        System.out.println();
-
-        int[] test2 = {1, 2, 3, 0, -1, 3};
-        System.out.println("Тест 2: " + java.util.Arrays.toString(test2));
-        System.out.println("Сума елементів > 3: " + sumElementsGreaterThan3(test2));
-        System.out.println();
-
-        int[] test3 = {10, 20, 5, 4};
-        System.out.println("Тест 3: " + java.util.Arrays.toString(test3));
-        System.out.println("Сума елементів > 3: " + sumElementsGreaterThan3(test3));
-        System.out.println();
-
-        int[] test4 = {-5, 100, 4, -10, 50};
-        System.out.println("Тест 4: " + java.util.Arrays.toString(test4));
-        System.out.println("Сума елементів > 3: " + sumElementsGreaterThan3(test4));
-        System.out.println();
-
-        // Один елемент > 3
-        int[] test5 = {5};
-        System.out.println("Тест 5: " + java.util.Arrays.toString(test5));
-        System.out.println("Сума елементів > 3: " + sumElementsGreaterThan3(test5));
+        System.out.println("Тест 1: " + Arrays.toString(test1));
+        System.out.println("Сума елементів > 3: " + obj.sumElementsGreaterThan3(test1));
         System.out.println();
 
         // Пустий масив
         try {
             int[] test6 = {};
-            System.out.println("Тест 6: порожній масив");
-            sumElementsGreaterThan3(test6);
+            System.out.println("Порожній масив");
+            obj.sumElementsGreaterThan3(test6);
         } catch (IllegalArgumentException e) {
             System.out.println("Виняток: " + e.getMessage());
             System.out.println();
@@ -87,8 +69,8 @@ public class Zavd2 {
 
         // Null масив
         try {
-            System.out.println("Тест 7: null масив");
-            sumElementsGreaterThan3(null);
+            System.out.println("Null масив");
+            obj.sumElementsGreaterThan3(null);
         } catch (NullPointerException e) {
             System.out.println("Виняток: " + e.getMessage());
         }
@@ -96,12 +78,12 @@ public class Zavd2 {
 }
 ```
 ### Результат виконання:
-[![image.png](https://i.postimg.cc/59qH0NFx/image.png)](https://postimg.cc/XXqN1W8h)
+[![image.png](https://i.postimg.cc/L5WCLydy/image.png)](https://postimg.cc/rRSNLNwW)
 
 ### 2.
 ```Java
 public class Zavd32 {
-    public static int sumEvenOnOddPositions(int[] array) {
+    public int sumEvenOnOddPositions(int[] array) {
         if (array == null) {
             throw new NullPointerException("Масив не може бути null");
         }
@@ -124,51 +106,18 @@ public class Zavd32 {
     }
 
     public static void main(String[] args) {
-
+        Zavd32 obj = new Zavd32();
         int[] test1 = {1, 4, 3, 6, 5, 8, 7};
         System.out.println("Тест 1: " + java.util.Arrays.toString(test1));
         System.out.println("Індекси непарні (1,3,5): елементи [4, 6, 8]");
-        System.out.println("Сума парних на непарних позиціях: " + sumEvenOnOddPositions(test1));
-        System.out.println();
-
-        // Нема парних на непарних
-        int[] test2 = {2, 1, 4, 3, 6, 5};
-        System.out.println("Тест 2: " + java.util.Arrays.toString(test2));
-        System.out.println("Індекси непарні (1,3,5): елементи [1, 3, 5] - всі непарні");
-        System.out.println("Сума парних на непарних позиціях: " + sumEvenOnOddPositions(test2));
-        System.out.println();
-
-        int[] test3 = {2, 4, 6, 8, 10};
-        System.out.println("Тест 3: " + java.util.Arrays.toString(test3));
-        System.out.println("Індекси непарні (1,3): елементи [4, 8]");
-        System.out.println("Сума парних на непарних позиціях: " + sumEvenOnOddPositions(test3));
-        System.out.println();
-
-        int[] test4 = {-1, -4, 3, -6, 5, 10};
-        System.out.println("Тест 4: " + java.util.Arrays.toString(test4));
-        System.out.println("Індекси непарні (1,3,5): елементи [-4, -6, 10]");
-        System.out.println("Сума парних на непарних позиціях: " + sumEvenOnOddPositions(test4));
-        System.out.println();
-
-        // 1 елемент
-        int[] test5 = {5};
-        System.out.println("Тест 5: " + java.util.Arrays.toString(test5));
-        System.out.println("Немає елементів на непарних індексах");
-        System.out.println("Сума парних на непарних позиціях: " + sumEvenOnOddPositions(test5));
-        System.out.println();
-
-        // Два елемента
-        int[] test6 = {1, 8};
-        System.out.println("Тест 6: " + java.util.Arrays.toString(test6));
-        System.out.println("Індекс непарний (1): елемент [8]");
-        System.out.println("Сума парних на непарних позиціях: " + sumEvenOnOddPositions(test6));
+        System.out.println("Сума парних на непарних позиціях: " + obj.sumEvenOnOddPositions(test1));
         System.out.println();
 
         // Пустий
         try {
             int[] test7 = {};
-            System.out.println("Тест 7: порожній масив");
-            sumEvenOnOddPositions(test7);
+            System.out.println("Порожній масив");
+            obj.sumEvenOnOddPositions(test7);
         } catch (IllegalArgumentException e) {
             System.out.println("Виняток: " + e.getMessage());
             System.out.println();
@@ -176,22 +125,26 @@ public class Zavd32 {
 
         // Null масив
         try {
-            System.out.println("Тест 8: null масив");
-            sumEvenOnOddPositions(null);
+            System.out.println("Null масив");
+            obj.sumEvenOnOddPositions(null);
         } catch (NullPointerException e) {
             System.out.println("Виняток: " + e.getMessage());
         }
     }
 }
+
 ```
 ### Результат виконання:
-[![image.png](https://i.postimg.cc/0yJPzcHC/image.png)](https://postimg.cc/75DpcM4C)
+[![image.png](https://i.postimg.cc/4xkwGHXz/image.png)](https://postimg.cc/N5DR7M9M)
 
 ### 3.
 ```Java
+import java.util.Arrays;
+import java.util.Random;
+
 public class Zavd62
 {
-    public static int[] transformArray(int[] array) {
+    public int[] transformArray(int[] array) {
         if (array == null) {
             throw new NullPointerException("Масив не може бути null");
         }
@@ -226,52 +179,24 @@ public class Zavd62
     }
 
     public static void main(String[] args) {
+        Zavd62 obj = new Zavd62();
+        //Random rn = new Random();
+        //int[] arr = new int[10];
+        //for (int i = 0; i < arr.length; i++) {
+        //    arr[i] = rn.nextInt(100);
+        //}
+        //System.out.println(Arrays.toString(arr));
+
         int[] test1 = {10, 20, 5, 15};
         System.out.println("Тест 1: " + java.util.Arrays.toString(test1));
         System.out.println("Мінімальний елемент: 5");
-        System.out.println("Результат: " + java.util.Arrays.toString(transformArray(test1)));
-        System.out.println();
-
-        int[] test2 = {-10, 20, -5, 30};
-        System.out.println("Тест 2: " + java.util.Arrays.toString(test2));
-        System.out.println("Мінімальний елемент: -10");
-        System.out.println("Результат: " + java.util.Arrays.toString(transformArray(test2)));
-        System.out.println();
-
-        int[] test3 = {5, 0, 10, -3};
-        System.out.println("Тест 3: " + java.util.Arrays.toString(test3));
-        System.out.println("Мінімальний елемент: -3");
-        System.out.println("Результат: " + java.util.Arrays.toString(transformArray(test3)));
-        System.out.println();
-
-        int[] test4 = {7, 7, 7, 7};
-        System.out.println("Тест 4: " + java.util.Arrays.toString(test4));
-        System.out.println("Мінімальний елемент: 7");
-        System.out.println("Результат: " + java.util.Arrays.toString(transformArray(test4)));
-        System.out.println();
-
-        int[] test5 = {15};
-        System.out.println("Тест 5: " + java.util.Arrays.toString(test5));
-        System.out.println("Мінімальний елемент: 15");
-        System.out.println("Результат: " + java.util.Arrays.toString(transformArray(test5)));
-        System.out.println();
-
-        int[] test6 = {0, 0, 0};
-        System.out.println("Тест 6: " + java.util.Arrays.toString(test6));
-        System.out.println("Мінімальний елемент: 0");
-        System.out.println("Результат: " + java.util.Arrays.toString(transformArray(test6)));
-        System.out.println();
-
-        int[] test7 = {100, -2, 50, 200};
-        System.out.println("Тест 7: " + java.util.Arrays.toString(test7));
-        System.out.println("Мінімальний елемент: -2");
-        System.out.println("Результат: " + java.util.Arrays.toString(transformArray(test7)));
+        System.out.println("Результат: " + java.util.Arrays.toString(obj.transformArray(test1)));
         System.out.println();
 
         try {
             int[] test8 = {};
-            System.out.println("Тест 8: порожній масив");
-            transformArray(test8);
+            System.out.println("Порожній масив");
+            obj.transformArray(test8);
         } catch (IllegalArgumentException e) {
             System.out.println("Виняток: " + e.getMessage());
             System.out.println();
@@ -279,16 +204,18 @@ public class Zavd62
 
         // null масив
         try {
-            System.out.println("Тест 9: null масив");
-            transformArray(null);
+            System.out.println("Null масив");
+            obj.transformArray(null);
         } catch (NullPointerException e) {
             System.out.println("Виняток: " + e.getMessage());
         }
     }
 }
+
+
 ```
 ### Результат виконання:
-[![image.png](https://i.postimg.cc/504hS3pL/image.png)](https://postimg.cc/f3PqwYGR)
+[![image.png](https://i.postimg.cc/NfhPsz47/image.png)](https://postimg.cc/V5RF442d)
 
 # Контрольні питання
 ## 1. Чим змінна відрізняється від масиву
@@ -338,4 +265,5 @@ For дає доступ до індексу, можна змінювати ел�
 
 ## 13. Чи можна у масив «double[]» записати значення «int»? Чи можна у масив «int[]» записати значення «double»?
 У масив double[] можна записати int, відбудеться автоматичне розширення типу. У масив int[] не можна записати double 
+
 без явного приведення типу, бо втрачається точність - компілятор видасть помилку.
