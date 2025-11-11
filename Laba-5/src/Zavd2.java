@@ -1,5 +1,5 @@
 public class Zavd2 {
-    public static void selectionSort(short[] arr) {
+    public void selectionSort(short[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             int maxIdx = i;
@@ -14,7 +14,7 @@ public class Zavd2 {
         }
     }
 
-    public static void insertionSort(short[] arr) {
+    public void insertionSort(short[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
             short key = arr[i];
@@ -27,7 +27,7 @@ public class Zavd2 {
         }
     }
 
-    public static void printArray(short[] arr) {
+    public void printArray(short[] arr) {
         for (short num : arr) {
             System.out.print(num + " ");
         }
@@ -35,18 +35,19 @@ public class Zavd2 {
     }
 
     public static void main(String[] args) {
+        Zavd2 obj=new Zavd2();
         short[] arr1 = {64, 34, 25, 12, 22, 11, 90};
         short[] arr2 = {64, 34, 25, 12, 22, 11, 90};
 
         System.out.println("Вихідний масив:");
-        printArray(arr1);
+        obj.printArray(arr1);
 
-        selectionSort(arr1);
+        obj.selectionSort(arr1);
         System.out.println("Selection Sort (за спаданням):");
-        printArray(arr1);
+        obj. printArray(arr1);
 
-        insertionSort(arr2);
+        obj.insertionSort(arr2);
         System.out.println("Insertion Sort (за спаданням):");
-        printArray(arr2);
+        obj.printArray(arr2);
     }
 }
